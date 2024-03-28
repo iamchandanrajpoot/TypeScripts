@@ -1,7 +1,7 @@
 "use strict";
 const num1Element = document.getElementById("num1");
 const num2Element = document.getElementById("num2");
-const buttonElement = document.querySelector('button');
+const buttonElement = document.querySelector("button");
 const numArray = [];
 const textArray = [];
 function add(num1, num2) {
@@ -18,7 +18,7 @@ function add(num1, num2) {
 function printResult(resultObj) {
     console.log(resultObj.val);
 }
-buttonElement.addEventListener('click', () => {
+buttonElement.addEventListener("click", () => {
     const num1 = num1Element.value;
     const num2 = num2Element.value;
     const result = add(+num1, +num2);
@@ -30,3 +30,11 @@ buttonElement.addEventListener('click', () => {
     textArray.push(stringResult);
     console.log(numArray, textArray);
 });
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("hi i am xyz");
+    }, 1000);
+});
+myPromise.then(result => {
+    console.log(result.split(""));
+}).catch(error => console.log(error));

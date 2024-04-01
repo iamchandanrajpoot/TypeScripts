@@ -22,7 +22,7 @@ router.post("/todo", (req, res)=>{
 
 router.delete("/todos/:paramId",(req, res)=>{
     const params = req.params as RequstParams;
-    const todoIndex = todos.findIndex((todo=> req.params.paramId === todo.id))
+    const todoIndex = todos.findIndex((todo=> params.paramId === todo.id))
     if(todoIndex === -1){
         return res.status(404).json({message: "Item not found"})
     }
